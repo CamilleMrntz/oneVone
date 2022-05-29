@@ -30,6 +30,7 @@ const enemy = {
     damage : 15
 };
 
+// Adding the sprites images and the background
 const playerSprite = new Image();
 playerSprite.src = "img/fighter3.png";
 const background = new Image();
@@ -37,6 +38,7 @@ background.src = "img/background1.jpeg";
 const enemySprite = new Image();
 enemySprite.src = "img/enemy.png";
 
+// Adding health trackers
 let healthTrackerPlayer = document.getElementById('healthPlayer');
 let healthTrackerEnemy = document.getElementById('healthEnemy');
 
@@ -44,20 +46,6 @@ function drawSprite(img, sX, sY, sW, sH, dX, dY, dW, dH) {
     ctx.drawImage(img, sX , sY, sW, sH, dX, dY, dW, dH);
 }         
 
-// function drawHealth(dX, dY) {
-
-// }
-
-
-// function animate() {
-//     ctx.clearRect(0, 0, canvas.width, canvas.height);
-//     ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
-//     drawSprite(playerSprite, player.width * player.frameX, player.height * player.frameY, player.width, player.height, player.x, player.y, player.width, player.height);
-//     movePlayer();
-//     handlePlayerFrame();
-//     requestAnimationFrame(animate);
-// };
-// animate();
 
 window.addEventListener("keydown", function(e) {
     keys[e.keyCode] = true;
@@ -139,7 +127,7 @@ function movePlayer() {
     }
 }
 
-
+// Make the sprites move
 function handlePlayerFrame() {
     if (player.frameX < 5 && player.moving) player.frameX++
     else player.frameX = 0;
